@@ -1,0 +1,240 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>TouchSlider — JavaScript slide content</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<script src="jquery.min.js"></script>
+	<script src="jquery.touchslider.js"></script>
+	<link rel="stylesheet" type="text/css" href="s/style.css">
+	<link href="//fonts.googleapis.com/css?family=Alike" rel="stylesheet" type="text/css">
+	<style>
+		/* demo slider*/
+		.touchslider-demo .touchslider-viewport {
+			border: 5px solid #fff1e0;
+			background: #fff1e0;
+			-webkit-border-radius: 6px;
+			        border-radius: 6px;
+		}
+		.touchslider-demo .touchslider-item {
+			height: 345px;
+			overflow: hidden;
+		}
+		.touchslider-demo .touchslider-nav {
+			text-align: center;
+			margin-top: 16px;
+		}
+		.touchslider-demo .touchslider-nav a {
+			cursor: pointer;
+			color: #000;
+		}
+		.touchslider-demo .touchslider-nav a:active {
+			background: #689db2;
+		}
+
+		.touchslider-nav {
+			font: bold 16px/16px Georgia;
+		}
+		.touchslider-demo .touchslider-prev {
+			position: relative;
+			margin-right: 16px;
+			height: 16px;
+			background: #fff;
+			width: 100px;
+			display: inline-block;
+			padding: 0 0 0 10px;
+			-webkit-border-radius: 12px 0 0 12px;
+			        border-radius: 12px 0 0 12px;
+		}
+		.touchslider-demo .touchslider-next {
+			position: relative;
+			margin-left: 16px;
+			width: 100px;
+			height: 16px;
+			background: #fff;
+			display: inline-block;
+			-webkit-border-radius: 0 12px 12px 0;
+			        border-radius: 0 12px 12px 0;
+		}
+		.touchslider-demo .touchslider-next-in {
+			position: absolute; /* fix safari render font */
+			right: 10px;
+		}
+		.touchslider-demo .touchslider-prev-in {
+			position: absolute;
+			left: 10px;
+		}
+		.touchslider-demo .touchslider-nav-item {
+			width: 16px;
+			height: 16px;
+			background: #fff;
+			margin: 0 16px;
+			display: inline-block;
+			-webkit-border-radius: 12px;
+			        border-radius: 12px;
+			}
+		.touchslider-demo .touchslider-nav-item-current {
+			background: #cff0ff;
+		}
+
+		/* social slider */
+		.section-download {
+			position: relative;
+			padding-right: 230px;
+		}
+		.social {
+			width: 200px;
+			position: absolute;
+			right: 20px;
+			top: 0;
+		}
+		.touchslider-social .touchslider-nav {
+			text-align: center;
+			margin-bottom: 6px;
+		}
+		.touchslider-social .touchslider-nav-item {
+			opacity: .5;
+			padding: 0 2px;
+		}
+		.touchslider-social .touchslider-nav-item-current {
+			opacity: 1;
+		}
+	</style>
+</head>
+<body>
+<div id="body"><div id="body-in">
+
+<header class="header section">
+	<h1><img src="s/i/logo.png" alt="TouchSlider" width="201" height="46"></h1>
+	<p class="header-description">JavaScript touch control slider</p>
+</header>
+
+<section class="demo"><div class="demo-in"><div class="demo-in-in">
+	<div class="touchslider touchslider-demo">
+		<div class="touchslider-viewport" style="width:500px;overflow:hidden;position:relative;height:345px"><div style="width:10000px">
+			<div class="touchslider-item"><img src="images/3540115854_5d302001da.jpg" width="500" height="375" alt="Tree and cloud"></div>
+			<div class="touchslider-item"><img src="images/3540231388_f8ec22b549.jpg" width="500" height="347" alt="Ekaterina smile"></div>
+			<div class="touchslider-item"><img src="images/3542680555_ea43d85e0a.jpg" width="500" height="347" alt="Dasha &amp; Masha"></div>
+			<div class="touchslider-item"><img src="images/3546828250_6f91b64ba7.jpg" width="500" height="354" alt="Nastya">&nbsp;</div>
+		</div></div>
+		<div class="touchslider-nav"><a class="touchslider-prev"><span class="touchslider-prev-in">previous</span></a><a class="touchslider-nav-item touchslider-nav-item-current"></a><a class="touchslider-nav-item"></a><a class="touchslider-nav-item"></a><a class="touchslider-nav-item"></a><a class="touchslider-next"><span class="touchslider-next-in">next</span></a></div>
+	</div>
+</div></div></section>
+
+<script>
+	$(".touchslider-demo").touchSlider({mouseTouch: true});
+</script>
+
+
+<section class="section section-download">
+	<p><a href="jquery.touchslider.min.js">Download v0.95</a> (3KB minified and gzipped).</p>
+	<p>Actively supports these browsers: IE6+, Firefox 3+, Safari 5 (mobile Safari 4), Chrome 15, Opera 10+. Need jQuery 1.6+.</p>
+	<p><a href="https://github.com/lusever/TouchSlider">Source code</a> on GitHub.</p>
+	<script>
+	if (!("ontouchstart" in window && "WebKitCSSMatrix" in window)) {
+		document.write('<div class="social">'
+			+'<div class="touchslider touchslider-social">'
+				+'<div class="touchslider-nav">'
+					+'<img class="touchslider-nav-item touchslider-nav-item-current" src="s/i/twitter.png">'
+					+'<img class="touchslider-nav-item" src="s/i/facebook.png">'
+					+'<img class="touchslider-nav-item" src="s/i/google-plus.png">'
+				+'</div>'
+				+'<div class="touchslider-viewport" style="width:200px;overflow:hidden;position:relative;height:80px"><div style="width:10000px">'
+					+'<div style="width:200px;text-align:center"><!-- twitter has width 110px --><a href="https://twitter.com/share" class="twitter-share-button" data-count="horizontal">Tweet</a><'+'script src="//platform.twitter.com/widgets.js"></'+'script></div>'
+					+'<div><iframe src="//www.facebook.com/plugins/like.php?href=http://touchslider.com&amp;send=false&amp;layout=standard&amp;width=200&amp;show_faces=true&amp;action=like&amp;colorscheme=light&amp;height=80" scrolling="no" frameborder="0" style="border:none;overflow:hidden;width:200px;height:80px" allowTransparency="true"></iframe></div>'
+					+'<div><div class="g-plusone" data-size="small" data-annotation="inline" data-width="200"></div></div>'
+				+'</div></div>'
+			+'</div>'
+		+'</div>');
+		$(function() {
+			var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+			po.src = 'https://apis.google.com/js/plusone.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+			$(".touchslider-social").touchSlider({autoplay: true, delay: 3000});
+		});
+	}
+	</script>
+</section>
+
+<section class="section">
+<h2>How to use</h2>
+<!--
+lusever: need replace comments color 5f5a60 -> aeaeae
+-->
+<p>TouchSlider depends on jQuery. Include both in your header:</p>
+<pre style="background:#141414;color:#f8f8f8"><span style="color:#ac885b">&lt;<span style="color:#ac885b">script</span> <span style="color:#ac885b">src</span>=<span style="color:#8f9d6a">"//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"</span>>&lt;/<span style="color:#ac885b">script</span>></span>
+<span style="color:#ac885b">&lt;<span style="color:#ac885b">script</span> <span style="color:#ac885b">src</span>=<span style="color:#8f9d6a">"jquery.touchslider.min.js"</span>>&lt;/<span style="color:#ac885b">script</span>></span>
+&lt;<span style="color:#e0c589">script</span>>
+jQuery(<span style="color:#f9ee98">function</span>(<span style="color:#cda869">$</span>) {
+    <span style="color:#9b859d">$</span>("<span style="color:#9b703f">.touchslider</span>").touchSlider({<span style="color:#aeaeae;font-style:italic">/*options*/</span>});
+});
+&lt;/<span style="color:#e0c589">script</span>>
+</pre>
+
+<p>In your html do something like:</p>
+<pre style="background:#141414;color:#f8f8f8"><span style="color:#ac885b">&lt;<span style="color:#ac885b">div</span> <span style="color:#ac885b">class</span>=<span style="color:#8f9d6a">"touchslider"</span>></span>
+    <span style="color:#ac885b">&lt;<span style="color:#ac885b">div</span> <span style="color:#ac885b">class</span>=<span style="color:#8f9d6a">"touchslider-viewport"</span> <span style="color:#ac885b">style</span>=<span style="color:#8f9d6a">"width:500px;overflow:hidden"</span>></span><span style="color:#ac885b">&lt;<span style="color:#ac885b">div</span>></span>
+        <span style="color:#ac885b">&lt;<span style="color:#ac885b">div</span> <span style="color:#ac885b">class</span>=<span style="color:#8f9d6a">"touchslider-item"</span>></span><span style="color:#aeaeae;font-style:italic">&lt;!-- your html content --></span><span style="color:#ac885b">&lt;/<span style="color:#ac885b">div</span>></span>
+        <span style="color:#ac885b">&lt;<span style="color:#ac885b">div</span> <span style="color:#ac885b">class</span>=<span style="color:#8f9d6a">"touchslider-item"</span>>&lt;/<span style="color:#ac885b">div</span>></span>
+        ...
+    <span style="color:#ac885b">&lt;/<span style="color:#ac885b">div</span>></span><span style="color:#ac885b">&lt;/<span style="color:#ac885b">div</span>></span>
+
+    <span style="color:#ac885b">&lt;<span style="color:#ac885b">div</span>></span>
+        <span style="color:#e0c589">&lt;<span style="color:#e0c589">span</span> <span style="color:#e0c589">class</span>=<span style="color:#8f9d6a">"touchslider-prev"</span>></span>←<span style="color:#e0c589">&lt;/<span style="color:#e0c589">span</span>></span>
+        <span style="color:#e0c589">&lt;<span style="color:#e0c589">span</span> <span style="color:#e0c589">class</span>=<span style="color:#8f9d6a">"touchslider-nav-item touchslider-nav-item-current"</span>></span>1<span style="color:#e0c589">&lt;/<span style="color:#e0c589">span</span>></span>
+        <span style="color:#e0c589">&lt;<span style="color:#e0c589">span</span> <span style="color:#e0c589">class</span>=<span style="color:#8f9d6a">"touchslider-nav-item"</span>></span>2<span style="color:#e0c589">&lt;/<span style="color:#e0c589">span</span>></span>
+        ...
+        <span style="color:#e0c589">&lt;<span style="color:#e0c589">span</span> <span style="color:#e0c589">class</span>=<span style="color:#8f9d6a">"touchslider-next"</span>></span>→<span style="color:#e0c589">&lt;/<span style="color:#e0c589">span</span>></span>
+    <span style="color:#ac885b">&lt;/<span style="color:#ac885b">div</span>></span>
+<span style="color:#ac885b">&lt;/<span style="color:#ac885b">div</span>></span>
+</pre>
+
+<p>JavaScript options:</p>
+<!--
+lusever: add <dfn title="String selector, jQuery, DOM Element, [DOM Element]"> for jQuery object
+-->
+<pre style="background:#141414;color:#f8f8f8">container: <span style="color:#7587a6">this</span>,
+duration: <span style="color:#cf6a4c">350</span>, <span style="color:#aeaeae;font-style:italic">// the speed of the sliding animation in milliseconds</span>
+delay: <span style="color:#cf6a4c">3000</span>, <span style="color:#aeaeae;font-style:italic">// initial auto-scrolling delay for each loop</span>
+margin: <span style="color:#cf6a4c">5</span>, <span style="color:#aeaeae;font-style:italic">// borders size. The margin is set in pixels.</span>
+mouseTouch: <span style="color:#cf6a4c">true</span>,
+namespace: <span style="color:#8f9d6a">"touchslider"</span>,
+next: <span style="color:#8f9d6a">".touchslider-next"</span>, <span style="color:#aeaeae;font-style:italic">// <dfn title="String selector, jQuery, DOM Element, [DOM Element]">jQuery object</dfn> for the elements to which a "scroll forwards" action should be bound.</span>
+pagination: <span style="color:#8f9d6a">".touchslider-nav-item"</span>,
+currentClass: <span style="color:#8f9d6a">"touchslider-nav-item-current"</span>, <span style="color:#aeaeae;font-style:italic">// class name for current pagination item.</span>
+prev: <span style="color:#8f9d6a">".touchslider-prev"</span>, <span style="color:#aeaeae;font-style:italic">// <dfn title="String selector, jQuery, DOM Element, [DOM Element]">jQuery object</dfn> for the elements to which a "scroll backwards" action should be bound.</span>
+scroller: viewport.children(),
+autoplay: <span style="color:#cf6a4c">false</span>, <span style="color:#aeaeae;font-style:italic">// whether to move from image to image automatically</span>
+viewport: <span style="color:#8f9d6a">".touchslider-viewport"</span>
+</pre>
+
+<p>Note: be sure not to include a "," after the last line or you'll get an error in Internet Explorer.</p>
+
+<p>To manually start and stop the slider you can use the following code:</p>
+<!--
+lusever: "start" replace color cf6a4c -> dad085
+-->
+<pre style="background:#141414;color:#f8f8f8"><span style="color:#9b859d">$</span>("<span style="color:#9b703f">.touchslider</span>").<span style="color:#cf6a4c">data</span>(<span style="color:#8f9d6a">"touchslider"</span>)<span style="color:#dad085">.stop</span>(); <span style="color:#aeaeae;font-style:italic">// stop the slider</span>
+<span style="color:#9b859d">$</span>("<span style="color:#9b703f">.touchslider</span>").<span style="color:#cf6a4c">data</span>(<span style="color:#8f9d6a">"touchslider"</span>).<span style="color:#dad085">start</span>(); <span style="color:#aeaeae;font-style:italic">// start the slider</span>
+</pre>
+
+
+</section>
+
+<footer class="footer"><div class="footer-in section">
+	<p>Developed by <a href="http://lusever.com">lusever</a>.</p>
+</div></footer>
+
+<div></div>
+
+</div></div>
+
+<script>
+var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-26775130-1"]),_gaq.push(["_trackPageview"]),function(){var a=document.createElement("script");a.async=!0,a.src="//www.google-analytics.com/ga.js";var b=document.getElementsByTagName("script")[0];b.parentNode.insertBefore(a,b)}()
+</script>
+
+</body>
+</html>
